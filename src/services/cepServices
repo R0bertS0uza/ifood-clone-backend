@@ -1,0 +1,10 @@
+const ViaCepClient = require('../cep/client/viaCepClient.js');
+
+class CepService {
+    async findByEndereco(req) {
+        const { cep } = req.params;
+        return await ViaCepClient.findByCep(cep);
+    }
+}
+
+module.exports = new CepService();
